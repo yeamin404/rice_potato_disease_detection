@@ -3,9 +3,11 @@ import tensorflow as tf
 import numpy as np
 
 
+def load_model_cached():
+    return load_model("new_model.keras")
 #Tensorflow Model Prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("new_model.keras")
+    model = load_model_cached()
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr]) #convert single image to batch
