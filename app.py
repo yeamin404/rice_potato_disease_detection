@@ -4,7 +4,9 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 def load_model_cached():
-    return load_model("model1.h5")
+    model = load_model("model1.h5", compile=False)
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    return model
 #Tensorflow Model Prediction
 def model_prediction(test_image):
     model = load_model_cached()
