@@ -4,10 +4,10 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 def load_model_cached():
-    model = load_model("new_model.keras", compile=False)
-    model.compile(optimizer='Adam',
-              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
-              metrics=['accuracy'])
+    try:
+        model = load_model("new_model.keras")
+    except Exception as e:
+        st.error(f"Failed to load model: {e}")
     return model
 #Tensorflow Model Prediction
 def model_prediction(test_image):
