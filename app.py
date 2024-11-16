@@ -8,6 +8,9 @@ def load_model_cached():
         model = load_model("new_model.keras")
     except Exception as e:
         st.error(f"Failed to load model: {e}")
+
+    for layer in model.layers:
+        print(layer.name, layer.get_config())
     return model
 #Tensorflow Model Prediction
 def model_prediction(test_image):
