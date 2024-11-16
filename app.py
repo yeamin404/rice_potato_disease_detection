@@ -5,7 +5,9 @@ from tensorflow.keras.models import load_model
 
 def load_model_cached():
     model = load_model("model1.h5", compile=False)
-    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='Adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=['accuracy'])
     return model
 #Tensorflow Model Prediction
 def model_prediction(test_image):
