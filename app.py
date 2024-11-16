@@ -56,7 +56,7 @@ elif(app_mode=="Disease Recognition"):
     st.header("Disease Recognition")
     test_image = st.file_uploader("Choose an Image:")
     if test_image is not None:
-        st.image(test_image, caption="Uploaded image", use_column_width=False, width=500)
+        st.image(test_image, caption="Uploaded image", use_container_width=False, width=500)
  
         if st.button("Predict"):
             st.balloons()
