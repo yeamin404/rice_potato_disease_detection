@@ -4,10 +4,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 def load_model_cached():
-    try:
-        model = load_model("new_model.keras")
-    except Exception as e:
-        st.error(f"Failed to load model: {e}")
+    model = load_model("new_model.keras")
 
     for layer in model.layers:
         print(layer.name, layer.get_config())
