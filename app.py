@@ -4,7 +4,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 def load_model_cached():
-    model = load_model("model1.h5", compile=False)
+    model = load_model("new_model.keras", compile=False)
     model.compile(optimizer='Adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
               metrics=['accuracy'])
