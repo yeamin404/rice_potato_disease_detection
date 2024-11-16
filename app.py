@@ -1,7 +1,7 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
-
+from tensorflow.keras.models import load_model
 
 def load_model_cached():
     return load_model("new_model.keras")
