@@ -4,7 +4,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 def load_model_cached():
-    return load_model("new_model.keras")
+    return load_model("model1.h5")
 #Tensorflow Model Prediction
 def model_prediction(test_image):
     model = load_model_cached()
